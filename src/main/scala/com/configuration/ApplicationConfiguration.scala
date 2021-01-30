@@ -3,12 +3,11 @@ package com.configuration
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
 object Configuration {
   def load: AppConfiguration = {
     new ObjectMapper(new YAMLFactory)
-      .registerModule(DefaultScalaModule).readValue(getClass.getClassLoader.getResourceAsStream("config.yml"), classOf[AppConfiguration])
+      .readValue(getClass.getClassLoader.getResourceAsStream("config.yml"), classOf[AppConfiguration])
   }
 }
 

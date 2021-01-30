@@ -4,4 +4,4 @@ elasticsearch:
   host: "192.168.0.153"
   port: "9200"
   index: "employee"
-sourceData: "src/main/resources/config.yml"
+sourceData: "src/main/resources/employee.csv"
